@@ -1,16 +1,16 @@
 /* eslint-disable jsx-a11y/alt-text */
 import React from 'react';
 import logo from "../../images/logo.png";
-import header from "./Header.css";
+import "./Header.css";
 
 const Header = () => {
     return (
         <div className="header">
             <img src={logo}/>
             <nav>
-                <a href=""></a>
-                <a href=""></a>
-                <a href=""></a>    
+                <a href="/shop">Shop</a>
+                <a href="/order">Order Review</a>
+                <a href="/manage">Manage Inventory Here</a>    
             </nav>
         </div>
     );
