@@ -32,7 +32,7 @@ const Shop = (props) => {
         <div className="shop">
             <div className="product-section">
                 {
-                    props.products.map(product => <Product
+                    props.products && props.products.map(product => <Product
                         product={product}
                         key={product.key}
                         handleAddProduct={handleAddProduct}
