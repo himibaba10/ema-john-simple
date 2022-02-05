@@ -1,0 +1,15 @@
+.shop,
+.order-container {
+  box-sizing: border-box;
+  display: flex;
+}
+
+.product-section, .review-section {
+  flex-basis: 75%;
+  margin-left: 200px;
+  border-right: 1px solid lightgrey;
+  margin-right: 10px;
+}
+.cart-section {
+  flex-basis: 25%;
+}

@@ -1,0 +1,16 @@
+.cart-container table {
+  font-size: 15px;
+}
+
+.cart-container table td {
+  padding: 0 10px;
+}
+
+.cart-container table .order-total {
+  color: #b12704;
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 22px;
+  border-top: 1px solid gray;
+  margin-top: 5px;
+}

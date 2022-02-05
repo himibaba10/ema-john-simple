@@ -1,0 +1,25 @@
+.header img {
+  display: block;
+  margin: 10px auto;
+}
+
+.header .main-menu ul {
+  background-color: black;
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+}
+
+.header .main-menu ul li a {
+  display: inline-block;
+  color: white;
+  text-decoration: none;
+  font-size: 20px;
+  padding: 10px 25px;
+  transition: all 0.2s linear;
+}
+
+.header .main-menu ul li a:hover {
+  background-color: wheat;
+  color: black;
+}

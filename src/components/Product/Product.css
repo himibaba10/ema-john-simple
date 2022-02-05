@@ -1,0 +1,40 @@
+.product {
+  display: flex;
+  border-bottom: 1px solid lightgrey;
+  margin-bottom: 10px;
+  margin-right: 10px;
+  padding-bottom: 10px;
+}
+
+.product-name {
+  color: #0000ff;
+  font-weight: 400;
+}
+
+.product img {
+  width: 218px;
+  margin-right: 20px;
+}
+
+.product-description {
+  display: flex;
+}
+
+.product-description > div:nth-child(1) {
+  margin-right: 100px;
+}
+
+.main-button {
+  width: 200px;
+  height: 26px;
+  background-color: #f0c14b;
+  border-width: 1px;
+  border-color: #a88734 #9c7e31 #846a29;
+  outline: none;
+  cursor: pointer;
+}
+
+.product-description .features-list li {
+  font-size: 12px;
+  color: gray;
+}

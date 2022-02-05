@@ -1,23 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import { Route, Routes } from "react-router-dom";
+import "./App.css";
+import Header from "./components/Header/Header";
+import Inventory from "./components/Inventory/Inventory";
+import NotFound from "./components/NotFound/NotFound";
+import Order from "./components/Order/Order";
+import ProductDetails from "./components/ProductDetails/ProductDetails";
+import Shop from "./components/Shop/Shop";
 
 function App() {
+
+  const [products, setProducts] = useState([]);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="App.css">
+      <Header />
+      <Routes>
+        <Route path="/shop" element={<Shop products={products} setProducts={setProducts}/>}/>
+        <Route path="/order" element={<Order products={products} setProducts={setProducts} />} />
+        <Route path="/inventory" element={<Inventory />} />
+        <Route exact path="/" element={<Shop />} />
+        <Route path="/product/:productKey" element={<ProductDetails />}>
+          <Route path="seeOrder" element={<Order />} />
+        </Route>
+        <Route path="*" element={<NotFound />} />
+      </Routes>
     </div>
   );
 }
