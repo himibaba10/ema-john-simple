@@ -44,7 +44,6 @@ const Cart = (props) => {
   const total = productPrice + shipping + tax;
 
   const handlePlaceOrder = () => {
-    console.log(cart.length)
     if(cart.length !== 0){
       clearTheCart();
       props.setProducts([]);

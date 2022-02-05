@@ -4,7 +4,7 @@ import { deleteFromDb, getStoredCart } from "../../resources/utilities/fakedb";
 import Cart from "../Cart/Cart";
 import Product from "../Product/Product";
 
-const Order = (props) => {
+const Order = ({products, setProducts}) => {
   const cart = getStoredCart();
   const cartItems = Object.keys(cart);
 
@@ -12,7 +12,7 @@ const Order = (props) => {
   const [showImage, setShowImage] = useState(false);
 
   const cartProducts = cartItems.map((key) => {
-    return props.products.find((pd) => pd.key === key);
+    return products?.find((pd) => pd.key === key);
   });
 
   cartProducts.map((pd) => pd && (pd.quantity = cart[pd.key]));
@@ -22,7 +22,7 @@ const Order = (props) => {
   );
 
   const handleRemoveProduct = (productKey) => {
-    props.setProducts(cartProducts.filter((pd) => pd.key !== productKey));
+    setProducts(cartProducts.filter((pd) => pd.key !== productKey));
     deleteFromDb(productKey);
   };
 
@@ -47,8 +47,8 @@ const Order = (props) => {
       </div>
       <div style={{ marginRight: "50px" }}>
         <Cart
-          products={props.products}
-          setProducts={props.setProducts}
+          products={products}
+          setProducts={setProducts}
           orderPlaced={orderPlaced}
           setOrderPlaced={setOrderPlaced}
           setShowImage={setShowImage}

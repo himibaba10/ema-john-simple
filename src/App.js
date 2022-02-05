@@ -19,9 +19,9 @@ function App() {
         <Route path="/shop" element={<Shop products={products} setProducts={setProducts}/>}/>
         <Route path="/order" element={<Order products={products} setProducts={setProducts} />} />
         <Route path="/inventory" element={<Inventory />} />
-        <Route exact path="/" element={<Shop />} />
-        <Route path="/product/:productKey" element={<ProductDetails />}>
-          <Route path="seeOrder" element={<Order />} />
+        <Route exact path="/" element={<Shop  products={products} setProducts={setProducts}/>} />
+        <Route path="/product/:productKey" element={<ProductDetails products={products}/>}>
+          <Route path="seeOrder" element={<Order products={products} setProducts={setProducts}/>} />
         </Route>
         <Route path="*" element={<NotFound />} />
       </Routes>

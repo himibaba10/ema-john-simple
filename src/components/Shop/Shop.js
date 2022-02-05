@@ -6,17 +6,17 @@ import fakeData from "./../../resources/fakeData/products.JSON";
 import "./Shop.css";
 
 
-const Shop = (props) => {
-
-    const [products, setProducts] = useState([]);
+const Shop = ({products, setProducts}) => {
 
     const [cart, setCart] = useState([]);
 
     useEffect(() => {
         fetch(fakeData && fakeData)
         .then(res => res && res.json())
-        .then(data => data && setProducts(data.slice(0,10)))
-    }, [props]);
+        .then(data => {
+            setProducts(data.slice(0,10))
+        })
+    });
 
     const handleAddProduct = (product) => {
         const newCart = [...cart, product];

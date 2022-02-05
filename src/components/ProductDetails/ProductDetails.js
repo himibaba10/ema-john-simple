@@ -17,8 +17,7 @@ const ProductDetails = () => {
       .then((data) => setProducts(data.slice(0, 10)));
   }, []);
 
-  const product = products.find((pd) => pd.key === productKey);
-
+  const product = products.find((pd) => pd && pd.key === productKey);
 
   return product ? (
     <div>
@@ -30,12 +29,10 @@ const ProductDetails = () => {
       <Outlet/>
     </div>
   ) : (
-    setTimeout(() => {
       <div className="product-not-available">
         <h1>The product you are finding, is not available</h1>
         <p>Or maybe you wrote a wrong product key</p>
-      </div>;
-    }, 500)
+      </div>
   );
 };
 
