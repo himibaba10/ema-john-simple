@@ -15,7 +15,7 @@ const Shop = (props) => {
     useEffect(() => {
         fetch(fakeData)
         .then(res => res.json())
-        .then(data => props.setProducts(data.slice(0,10)))
+        .then(data => props.setProducts(data && data?.slice(0,10)))
     }, [props]);
 
     const handleAddProduct = (product) => {
