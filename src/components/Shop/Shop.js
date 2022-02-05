@@ -8,14 +8,14 @@ import "./Shop.css";
 
 const Shop = (props) => {
 
-    // const [products, setProducts] = useState([]);
+    const [products, setProducts] = useState([]);
 
     const [cart, setCart] = useState([]);
 
     useEffect(() => {
         fetch(fakeData && fakeData)
         .then(res => res && res.json())
-        .then(data => data && props && props.setProducts(data.slice(0,10)))
+        .then(data => data && setProducts(data.slice(0,10)))
     }, [props]);
 
     const handleAddProduct = (product) => {
@@ -32,7 +32,7 @@ const Shop = (props) => {
         <div className="shop">
             <div className="product-section">
                 {
-                    props.products && props.products.map(product => <Product
+                    products && products.map(product => <Product
                         product={product}
                         key={product.key}
                         handleAddProduct={handleAddProduct}
